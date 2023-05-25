@@ -1,0 +1,72 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "gete",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "presnt",
+				"outputs": [
+					{
+						"internalType": "enum enumm.satate",
+						"name": "",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"project.sol": "enumm"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"project.sol": {
+			"keccak256": "0x0907ec1d613550e982ac8952302d9b26f1865f8434ca784540b94ceaf75c9ecf",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://e632929a5310d0c94c5f06be80552814ebec04b0e971f3d8f0d4973e7aacc2bb",
+				"dweb:/ipfs/QmeR6Wb6Vh4zUmqhjmZ6mzkeQ2po2Q3t1ZU2YwPmFhAjVj"
+			]
+		}
+	},
+	"version": 1
+}

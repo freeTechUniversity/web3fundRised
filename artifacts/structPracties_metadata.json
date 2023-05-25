@@ -1,0 +1,102 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_name",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_age",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "_adress",
+						"type": "address"
+					},
+					{
+						"internalType": "bool",
+						"name": "_trueFalse",
+						"type": "bool"
+					}
+				],
+				"name": "getStruct",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "name",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "age",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "adress",
+								"type": "address"
+							},
+							{
+								"internalType": "bool",
+								"name": "trueFalse",
+								"type": "bool"
+							}
+						],
+						"internalType": "struct structPracties.Structt",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"project.sol": "structPracties"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"project.sol": {
+			"keccak256": "0x4272812e0612cbcc01b3a72e2af421f85f206e9e62c410b89ae6f5e7bda0b0fe",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://d9379f22a02e1e47075fa500466787ba07171c175cf74fddd8d57ab1890ce785",
+				"dweb:/ipfs/QmZ4zjBUrPdusHsNjBLgbSn6EDxYw1xYRFz4yh58aKL7Pa"
+			]
+		}
+	},
+	"version": 1
+}

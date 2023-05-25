@@ -1,0 +1,64 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [],
+				"name": "setFunc",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"solidityPractiesFile/practies.sol": "practies"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"solidityPractiesFile/practies.sol": {
+			"keccak256": "0x28d89f99ff1c1380dcb3f28a965fee9e97af7afd1660dfc805bc835d0f34c086",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://654141575a530ef2230c5a83cf3f8b61239759279d2475c663db035ab01cfb1c",
+				"dweb:/ipfs/QmYBjujQ1nbZzeX6nmdozV2e5pQ1dsN4KEqj8yMg8AfbMg"
+			]
+		}
+	},
+	"version": 1
+}

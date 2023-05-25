@@ -1,0 +1,45 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"practies.sol": "BloodB"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"practies.sol": {
+			"keccak256": "0xdce205ea0b9bd2e01c767455dc91bec786d3cff9dbb494fc97cabac8b63aaf71",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://a597495ef544c4851391ef8721ed3f5a6d55c192112ded65db6879a4024523e4",
+				"dweb:/ipfs/QmUmrPAnrocc18xNzz9njUHf22JPXZ3xxRwSAjLfbtfN9k"
+			]
+		}
+	},
+	"version": 1
+}

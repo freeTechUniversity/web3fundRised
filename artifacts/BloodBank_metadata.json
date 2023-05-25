@@ -1,0 +1,280 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "message",
+						"type": "string"
+					}
+				],
+				"name": "Successfull",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_aadhar",
+						"type": "uint256"
+					},
+					{
+						"internalType": "enum BloodBank.PatientType",
+						"name": "_type",
+						"type": "uint8"
+					},
+					{
+						"internalType": "address",
+						"name": "_from",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_to",
+						"type": "address"
+					}
+				],
+				"name": "bloodTransaction",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getAllRecord",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "aadhar",
+								"type": "uint256"
+							},
+							{
+								"internalType": "string",
+								"name": "name",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "age",
+								"type": "uint256"
+							},
+							{
+								"internalType": "string",
+								"name": "bloodGroup",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "contact",
+								"type": "uint256"
+							},
+							{
+								"internalType": "string",
+								"name": "homeAddress",
+								"type": "string"
+							},
+							{
+								"components": [
+									{
+										"internalType": "enum BloodBank.PatientType",
+										"name": "patientType",
+										"type": "uint8"
+									},
+									{
+										"internalType": "uint256",
+										"name": "time",
+										"type": "uint256"
+									},
+									{
+										"internalType": "address",
+										"name": "from",
+										"type": "address"
+									},
+									{
+										"internalType": "address",
+										"name": "to",
+										"type": "address"
+									}
+								],
+								"internalType": "struct BloodBank.BloodTransaction[]",
+								"name": "bT",
+								"type": "tuple[]"
+							}
+						],
+						"internalType": "struct BloodBank.Patient[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_aadhar",
+						"type": "uint256"
+					}
+				],
+				"name": "getPatientRecord",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "aadhar",
+								"type": "uint256"
+							},
+							{
+								"internalType": "string",
+								"name": "name",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "age",
+								"type": "uint256"
+							},
+							{
+								"internalType": "string",
+								"name": "bloodGroup",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "contact",
+								"type": "uint256"
+							},
+							{
+								"internalType": "string",
+								"name": "homeAddress",
+								"type": "string"
+							},
+							{
+								"components": [
+									{
+										"internalType": "enum BloodBank.PatientType",
+										"name": "patientType",
+										"type": "uint8"
+									},
+									{
+										"internalType": "uint256",
+										"name": "time",
+										"type": "uint256"
+									},
+									{
+										"internalType": "address",
+										"name": "from",
+										"type": "address"
+									},
+									{
+										"internalType": "address",
+										"name": "to",
+										"type": "address"
+									}
+								],
+								"internalType": "struct BloodBank.BloodTransaction[]",
+								"name": "bT",
+								"type": "tuple[]"
+							}
+						],
+						"internalType": "struct BloodBank.Patient",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_name",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_age",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "_bloodGroup",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_contact",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "_homeAddress",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_aadhar",
+						"type": "uint256"
+					}
+				],
+				"name": "newPatient",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"solidity.sol": "BloodBank"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"solidity.sol": {
+			"keccak256": "0x518b759a9287148b0093949c7866b739e30640add8e8046d0d0c761753d053b4",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://45ba0243dc362847a06ef1883f17646761ac794c26c43b40a05f13457262b242",
+				"dweb:/ipfs/QmRVaUVRphmzYYSg4e94zJ4nt5Zbtg6bToNrcmvnMABYWu"
+			]
+		}
+	},
+	"version": 1
+}
