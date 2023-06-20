@@ -1,129 +1,84 @@
 // SPDX-License-Identifier: GPL-3.0
+pragma solidity ^0.8.18;
 
-pragma solidity ^0.8.0;
 
-contract BloodBank {
-    // set the owner of the contract
-    address owner;
 
-    constructor() {
-        owner = msg.sender;
+contract MosjidFundRaising{
+
+    address payable public Owner;
+    uint public totalFundNe;
+    uint public totalFundRaised;
+    uint public totalDonar;
+    uint public totalVote;
+    uint public votingEndTime;
+    uint remainingFund;
+    uint totalAsk = 1;
+    uint public endTime;
+    bool fundClamed;
+    bool public votingStatus;
+
+    //mapping all donaars
+    mapping (address => uint) public donars;
+    //here mapping all voted 
+    mapping (address => bool) public voted;
+
+    constructor(uint _totalFundReq,uint _endTime){
+        Owner = payable(msg.sender);
+        endTime = block.timestamp + _endTime;
+        totalFundNe = _totalFundReq;
     }
 
-    // Used for defining PatientType
-    enum PatientType {
-        Donor,
-        Receiver
+    function sendFund() external payable {
+        require(block.timestamp<endTime,"headline have passed");
+        require(msg.sender != Owner,"onwer never give up any money");
+        require(msg.value==0,"you can send minimum 1 ");
+        //check the new contributeer
+
+        if(donars[msg.sender]==0){
+            totalDonar ++;
+        }
+        donars[msg.sender]=donars[msg.sender] + msg.value;
+        totalFundRaised = totalFundRaised + msg.value;
     }
 
-    // Used to storing blood txn
-    struct BloodTransaction {
-        PatientType patientType;
-        uint256 time;
-        address from;
-        address to;
+    function getContractBalance() external view returns(uint){
+        return address(this).balance;
     }
 
-    // Used for storing single Patient records
-    struct Patient {
-        uint256 aadhar;
-        string name;
-        uint256 age;
-        string bloodGroup;
-        uint256 contact;
-        string homeAddress;
-        BloodTransaction[] bT;
+    function startVoting(uint _votingEndTime) external{
+        require(msg.sender == Owner,"voting start only can owneer");
+        require(block.timestamp>endTime,"headlin pased yet");
+        votingEndTime = block.timestamp + _votingEndTime;
+         votingStatus = true;
+    }
+    
+    function putVote() external {
+        require(votingStatus == true,"voting has not starting yet!");
+        require(block.timestamp<votingEndTime," voting time has passed");
+        require(donars[msg.sender] != 0,"You are not allowed to participate as you have not cotributed!!");
+        require(voted[msg.sender] == false,"you already voted");
+        totalVote ++;
+        voted[msg.sender] = true;
     }
 
-    // Array to store all the patientRecord
-    // Array is used so that all the patientRecord can be fetched at once
-    Patient[] PatientRecord;
+    function claimFund() public{
+        require(fundClamed == false,"fund already claimed!");
+        require(msg.sender == Owner, "only claimed this fund owner!");
+        require(block.timestamp > endTime, "crowdfunding not over yet!");
 
-    // map is used to map the addhar card with the index number of the array where patient record is stored
-    // this will prevent the use of loop in contract
-    mapping(uint256 => uint256) PatientRecordIndex;
-
-    // used for notifying if function is executed or not
-    event Successfull(string message);
-
-    // Register a new patient
-    function newPatient(
-        string memory _name,
-        uint256 _age,
-        string memory _bloodGroup,
-        uint256 _contact,
-        string memory _homeAddress,
-        uint256 _aadhar
-    ) external {
-        // Since patient can be only registered by the hospital hence its required to check if the sender
-        // is owner or not
-        require(msg.sender == owner, "only admin can register new patient");
-
-        // get the legth of array
-        uint256 index = PatientRecord.length;
-
-        // insert records
-        PatientRecord.push();
-        PatientRecord[index].name = _name;
-        PatientRecord[index].age = _age;
-        PatientRecord[index].bloodGroup = _bloodGroup;
-        PatientRecord[index].contact = _contact;
-        PatientRecord[index].homeAddress = _homeAddress;
-        PatientRecord[index].aadhar = _aadhar;
-
-        // store the aaray index in the map against the user addhar number
-        PatientRecordIndex[_aadhar] = index;
-
-        emit Successfull("Patient added successfully");
+        if ( totalAsk == 1){
+            uint transferAmt = totalFundRaised / 10; // fund frist time given 10%;
+            remainingFund = totalFundRaised - transferAmt;
+            totalAsk ++;
+            Owner.transfer(transferAmt);
+        }else {
+            require(block.timestamp > votingEndTime, "voting have not yet passed");
+            require(totalVote > totalDonar / 2,"mojeroty can not support");
+            fundClamed = true;
+            uint transferAmt = remainingFund;
+            remainingFund = 0;
+            Owner.transfer(transferAmt);
+        }
     }
 
-    // function to get specific user data
-    function getPatientRecord(uint256 _aadhar)
-        external
-        view
-        returns (Patient memory)
-    {
-        uint256 index = PatientRecordIndex[_aadhar];
-        return PatientRecord[index];
-    }
-
-    // function to get all the records
-    function getAllRecord() external view returns (Patient[] memory) {
-        return PatientRecord;
-    }
-
-    // store the blood txn
-    function bloodTransaction(
-        uint256 _aadhar,
-        PatientType _type,
-        address _from,
-        address _to
-    ) external {
-        // check if sender is hospital or not
-        require(
-            msg.sender == owner,
-            "only hospital can update the patient's blood transaction data"
-        );
-
-        // get at which index the patient registartion details are saved
-        uint256 index = PatientRecordIndex[_aadhar];
-
-        //insert the BloodTransaction in the record
-        BloodTransaction memory txObj = BloodTransaction({
-            patientType: _type,
-            time: block.timestamp,
-            from: _from,
-            to: _to
-        });
-         
-
-        PatientRecord[index].bT.push(txObj);
-
-        // Note: above statement can also be written like below statement;
-        // PatientRecord[index].bT.push(BloodTransaction(_type, block.timestamp,_from,_to));
-
-        emit Successfull(
-            "Patient blood transaction data is updated successfully"
-        );
-    }
 }

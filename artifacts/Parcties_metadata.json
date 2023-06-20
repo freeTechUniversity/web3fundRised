@@ -1,0 +1,85 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "getDay",
+				"outputs": [
+					{
+						"internalType": "enum Parcties.Day",
+						"name": "",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "selectedDay",
+				"outputs": [
+					{
+						"internalType": "enum Parcties.Day",
+						"name": "",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "enum Parcties.Day",
+						"name": "_day",
+						"type": "uint8"
+					}
+				],
+				"name": "setDay",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"practies.sol": "Parcties"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"practies.sol": {
+			"keccak256": "0x75a4a801d5dba0a5153f7acf99bedeef13fb6c07827e87f547ee201f972c821e",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://680cbfa689299ba4e13feda2697c6ff179de3fb19aca3a94e417b7ca2b2ce399",
+				"dweb:/ipfs/QmYqLcA6VMAiMtiCidLBrWyEL7rBuEQBy8cHp5kE8d3ScE"
+			]
+		}
+	},
+	"version": 1
+}

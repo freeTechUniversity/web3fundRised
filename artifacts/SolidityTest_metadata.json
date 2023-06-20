@@ -1,0 +1,53 @@
+{
+	"compiler": {
+		"version": "0.5.17+commit.d19bba13"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "add",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"methods": {}
+		},
+		"userdoc": {
+			"methods": {}
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"solidity.sol": "SolidityTest"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"solidity.sol": {
+			"keccak256": "0xfcca651bea18d316ea22955fccec1a14c018f21f0bd5d599d7ae91739b87f5a2",
+			"urls": [
+				"bzz-raw://b5a71002c95526289d566e5c4a15271fe782c0e9e9c227e9dcbfcf6db313553e",
+				"dweb:/ipfs/QmZG9mogPSTgHVFV5y9UDwMSQs4AGFuzGftnq1J3WHW9RU"
+			]
+		}
+	},
+	"version": 1
+}
